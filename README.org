@@ -1,0 +1,12 @@
+* MetaBiLSTM
+
+Pytorch implementation of Meta BiLSTM sequence tagger from this paper https://arxiv.org/pdf/1805.08237v1.pdf alongwith additions of GRU cells
+comparing both their performance. 
+
+* Requirements
+
+1. conllu
+
+* Usage Instructions
+
+The dataset download links and insructions are in =scripts= directory. The rar file needs to be extracted into the =data/embeddings= directory and the CoNLLU dataset needs to be placed in the root of the =dir= directory.
