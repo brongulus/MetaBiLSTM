@@ -3,13 +3,13 @@
         "input_size": 512,
         "hidden_dim": 512,
         "num_layers": 1,
-        "dropout": 0.0
+        "dropout": 0.33
     },
     "word_model_params": {
         "hidden_dim": 256,
         "mlp_proj_size": 256,
         "num_layers": 1,
-        "dropout": 0.0,
+        "dropout": 0.33,
         "pretrained_embs_path": "data/embeddings/model.txt"
     },
     "char_model_params": {
@@ -17,6 +17,7 @@
         "hidden_dim": 256,
         "mlp_proj_size": 256,
         "num_layers": 1,
-        "dropout": 0.0
-    }
+        "dropout": 0.33
+    },
+    // TODO Add gru model params
 }
