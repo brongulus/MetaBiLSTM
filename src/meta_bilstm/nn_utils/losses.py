@@ -2,8 +2,7 @@ import torch.nn.functional as F
 
 
 def seq_loss(inp, lens, labels):
-    """Displays the cross entropy loss which combines
-    log_softmax and nll_loss in a single function."""
+    """Calculate the cross entropy loss"""
     total_loss = 0
     for i in range(len(inp)):
         total_loss += F.cross_entropy(
@@ -13,7 +12,7 @@ def seq_loss(inp, lens, labels):
 
 
 def calc_accuracy(inp_inds, output, true_labels):
-    """Displays the accuracy"""
+    """Calculates the accuracy"""
     mask = inp_inds != 0
     total_preds = mask.sum()
     correct = ((output.argmax(dim=2) == true_labels) * mask).sum()
