@@ -10,3 +10,4 @@ comparing both their performance.
 * Usage Instructions
 
 The dataset download links and insructions are in =scripts= directory. The rar file needs to be extracted into the =data/embeddings= directory and the CoNLLU dataset needs to be placed in the root of the =dir= directory.
+*  TODO Add gru config in JSON file
