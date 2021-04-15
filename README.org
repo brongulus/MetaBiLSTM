@@ -13,3 +13,4 @@ The dataset download links and insructions are in =scripts= directory. The rar f
 
 * TODO Add gru config in JSON file
 * TODO Fix the metaBiLSTM layer, it's loss is horrible compared to character and word based models
+* TODO Add graphs and plots for performance visualisation
