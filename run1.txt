@@ -1,0 +1,96 @@
+~; python src/meta_bilstm/bin/train_model.py 
+{'meta_model_params': {'input_size': 512, 'hidden_dim': 512, 'num_layers': 1, 'dropout': 0.0}, 'word_model_params': {'hidden_dim': 256, 'mlp_proj_size': 256, 'num_layers': 1, 'dropout': 0.0, 'pretrained_embs_path': 'data/embeddings/model.txt'}, 'char_model_params': {'emb_dim': 100, 'hidden_dim': 256, 'mlp_proj_size': 256, 'num_layers': 1, 'dropout': 0.0}}
+100%|██████████████████████████████████████████████| 248978/248978 [00:21<00:00, 11638.70it/s]
+0it [00:00, ?it/s]Epochs 0, train step 0, train metrics:
+{'acc': {'char': [0.022847101092338562],
+         'meta': [0.036906853318214417],
+         'word': [0.005272407550364733]},
+ 'loss': {'char': [0.9329788684844971],
+          'meta': [2.8942558765411377],
+          'word': [2.909672737121582]}}
+31it [02:51,  6.04s/it]
+60it [06:02,  6.64s/it]Epochs 0, train step 60, train metrics:
+{'acc': {'char': [0.5033222436904907],
+         'meta': [0.28737542033195496],
+         'word': [0.5614618062973022]},
+ 'loss': {'char': [0.8349313735961914],
+          'meta': [1.8411591053009033],
+          'word': [1.398081660270691]}}
+120it [12:07,  6.02s/it]Epochs 0, train step 120, train metrics:
+{'acc': {'char': [0.5460829734802246],
+         'meta': [0.44009217619895935],
+         'word': [0.6267281174659729]},
+ 'loss': {'char': [0.24652720987796783],
+          'meta': [1.7482649087905884],
+          'word': [1.2808362245559692]}}
+180it [18:06,  5.09s/it]Epochs 0, train step 180, train metrics:
+{'acc': {'char': [0.6076458692550659],
+         'meta': [0.5030180811882019],
+         'word': [0.6036217212677002]},
+ 'loss': {'char': [0.19791266322135925],
+          'meta': [1.638064980506897],
+          'word': [1.1115890741348267]}}
+240it [23:54,  5.90s/it]Epochs 0, train step 240, train metrics:
+{'acc': {'char': [0.6335541009902954],
+         'meta': [0.5253863334655762],
+         'word': [0.6931567192077637]},
+ 'loss': {'char': [0.22221381962299347],
+          'meta': [1.9326536655426025],
+          'word': [0.7616928219795227]}}
+300it [29:14,  4.99s/it]Epochs 0, train step 300, train metrics:
+{'acc': {'char': [0.6768707633018494],
+         'meta': [0.569727897644043],
+         'word': [0.7108843326568604]},
+ 'loss': {'char': [0.16315799951553345],
+          'meta': [1.4514436721801758],
+          'word': [0.7756767272949219]}}
+360it [34:48,  5.98s/it]Epochs 0, train step 360, train metrics:
+{'acc': {'char': [0.7833935022354126],
+         'meta': [0.5469313859939575],
+         'word': [0.7364621162414551]},
+ 'loss': {'char': [0.13296610116958618],
+          'meta': [1.4333710670471191],
+          'word': [0.745799720287323]}}
+420it [41:05,  6.20s/it]Epochs 0, train step 420, train metrics:
+{'acc': {'char': [0.77582848072052],
+         'meta': [0.44834306836128235],
+         'word': [0.7699804902076721]},
+ 'loss': {'char': [0.12639285624027252],
+          'meta': [2.8917675018310547],
+          'word': [0.6519303321838379]}}
+480it [46:48,  6.28s/it]Epochs 0, train step 480, train metrics:
+{'acc': {'char': [0.8235294222831726],
+         'meta': [0.5126050710678101],
+         'word': [0.7848739624023438]},
+ 'loss': {'char': [0.0953126773238182],
+          'meta': [3.961665391921997],
+          'word': [0.5831559300422668]}}
+540it [52:45,  7.53s/it]Epochs 0, train step 540, train metrics:
+{'acc': {'char': [0.8297162055969238],
+         'meta': [0.4323873221874237],
+         'word': [0.7996661067008972]},
+ 'loss': {'char': [0.09747693687677383],
+          'meta': [3.311053514480591],
+          'word': [0.6903839707374573]}}
+600it [58:32,  7.11s/it]Epochs 0, train step 600, train metrics:
+{'acc': {'char': [0.8015414476394653],
+         'meta': [0.4238921105861664],
+         'word': [0.8034682273864746]},
+ 'loss': {'char': [0.10077513754367828],
+          'meta': [5.534769535064697],
+          'word': [0.5213704705238342]}}
+618it [1:00:24,  5.87s/it]^C
+Traceback (most recent call last):
+  File "/mnt/Data/Documents/3-2/NNFL/group-ass/MetaBiLSTM/src/meta_bilstm/bin/train_model.py", line 43, in <module>
+    main()
+  File "/mnt/Data/Documents/3-2/NNFL/group-ass/MetaBiLSTM/src/meta_bilstm/bin/train_model.py", line 39, in main
+    trainer.train_model(5)
+  File "/home/prashant/.local/lib/python3.9/site-packages/meta_bilstm/train_utils/trainer.py", line 76, in train_model
+    batch_metrics = self.train_step(batch, optimizers)
+  File "/home/prashant/.local/lib/python3.9/site-packages/meta_bilstm/train_utils/trainer.py", line 129, in train_step
+    metrics['loss'][model_name].backward()
+  File "/home/prashant/.local/lib/python3.9/site-packages/torch/tensor.py", line 221, in backward
+    torch.autograd.backward(self, gradient, retain_graph, create_graph)
+  File "/home/prashant/.local/lib/python3.9/site-packages/torch/autograd/__init__.py", line 130, in backward
+    Variable._execution_engine.run_backward(
+KeyboardInterrupt
