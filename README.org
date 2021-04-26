@@ -9,8 +9,44 @@ comparing both their performance.
 
 * Usage Instructions
 
-The dataset download links and insructions are in =scripts= directory. The rar file needs to be extracted into the =data/embeddings= directory and the CoNLLU dataset needs to be placed in the root of the =dir= directory.
+The dataset download links and insructions are in =scripts= directory.
+The rar file needs to be extracted into the =data/embeddings= directory and
+the CoNLLU dataset needs to be placed in the root of the =dir= directory.
 
 * TODO Add gru config in JSON file
 * TODO Fix the metaBiLSTM layer, it's loss is horrible compared to character and word based models
-* TODO Add graphs and plots for performance visualisation
+* TODO Add graphs and plots for performance n
+
+* Slides:
+1. Name ID - 1
+2. Title, affiliation of authors - 1
+3. Description - ~Aim, Methodology~, Outcome - 3/4
+4. Concepts - 3/4
+5. Dataset Details - 2/3
+6. Alloted tasks and progress - 1/2
+7. Implementation details, pseudocode - 4/6
+8. Results/discussions - 3/4
+9. Comparison of results - 1/2
+10. Challenges - 2/3
+11. Scope - 1
+12. Experience/Learning Outcomes - 1/2
+
+* Interim Notes
+Ref 1: [[https://medium.com/analytics-vidhya/information-from-parts-of-words-subword-models-e5353d1dbc79#:~:text=Subword%2Dmodels%3A%20Byte%20Pair%20Encodings%20and%20friends,-2.1%20Byte%20pair&text=Byte%20pair%20encoding%20(BPE)%20is,pairs%20into%20a%20new%20byte.&text=BPE%20is%20a%20word%20segmentation,(Unicode)%20characters%20in%20data.][Embeddings]]
+  
+1. Need for char based models? No word segmentations in some languages and handling informal language. 
+2. Benefits of char based models:
+   + Generate embeddings for unknown words.
+   + Similar words have similar embeddings.
+3. Subword Models
+   a. BYTE PAIR ENCODING: looking for the most frequent sequence of 2 bytes and then you add
+      that sequence of 2 bytes as a new element to your dictionary of possible values. Essentially
+      character n-grams. It encapsulates the most frequent n-gram pairs into a new n-gram.
+   b. WORDPIECE/SENTENCEPIECE: Greedy approximation to maximize language model log-likelihood to
+      choose the pieces and add n-gram that maximally reduces perplexity.
+      Wordpiece tokenizes inside words, it tokenizes words first then applies BPE.
+      In sentencepiece model, the whitespace is retained as a special token and grouped normally.
+4. Hybrid character and word level models
+5. The main issue with one-hot encoding is that the transformation does not rely on any supervision.
+   We can greatly improve embeddings by learning them using a neural network on a supervised task.
+   The embeddings form the parameters — weights — of the network which are adjusted to minimize loss on the task.
